@@ -62,7 +62,8 @@
         ],
         "categories": [
             {
-              	"code": "2",
+                "level": 1,
+                "code": "2",
                 "value": "Ambient"
             }
         ],
