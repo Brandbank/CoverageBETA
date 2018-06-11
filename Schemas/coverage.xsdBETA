@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="CoverageReport" version="2.1.0" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.brandbank.com/schemas/CoverageFeedback/2005/11" xmlns="http://www.brandbank.com/schemas/CoverageFeedback/2005/11">
+<xs:schema id="CoverageReport" version="2.2.0" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.brandbank.com/schemas/CoverageFeedback/2005/11" xmlns="http://www.brandbank.com/schemas/CoverageFeedback/2005/11">
   <xs:element name="RetailerFeedbackReport" type="ReportType">
   </xs:element>
   <xs:complexType name="ReportType">
@@ -30,7 +30,7 @@
       <!-- Is product Own Label -->
       <xs:element name="OwnLabel" type="xs:boolean" minOccurs="1" maxOccurs="1" />
       <!-- List of Categories -->
-      <xs:element name="Categories" type="CategoryListType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Categories" type="CategoryListType" minOccurs="0" maxOccurs="1" />
       <!-- Brandbank Product ID-->
       <xs:element name="BrandbankID" type="xs:integer" minOccurs="0" maxOccurs="unbounded" />
       <!-- Retailer supplied comment-->
@@ -99,7 +99,6 @@
   </xs:simpleType>
   <xs:simpleType name="GTINValueType">
     <xs:restriction base="xs:string">
-      <xs:minLength value="8" />
       <xs:maxLength value="14" />
     </xs:restriction>
   </xs:simpleType>
@@ -118,7 +117,7 @@
   <xs:complexType name="RetailerExtensionType">
     <xs:simpleContent>
       <xs:extension base="MandatoryString">
-        <xs:attribute name="Type" type="RetailerExtensionTypes" />
+        <xs:attribute name="Type" type="MandatoryString" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -141,24 +140,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="RetailerExtensionTypes">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Buyer" />
-      <xs:enumeration value="Assistant Buyer" />
-      <xs:enumeration value="Buying Controller" />
-      <xs:enumeration value="Category Director" />
-      <xs:enumeration value="Commercial Director" />
-      <xs:enumeration value="Store Count" />
-      <xs:enumeration value="Image Date" />
-      <xs:enumeration value="Store" />
-      <xs:enumeration value="Local Line" />
-      <xs:enumeration value="Legal Medical Classification" />
-      <xs:enumeration value="Ranged Online" />
-      <xs:enumeration value="Ranged Online Date" />
-      <xs:enumeration value="Retailer" />
-	  <xs:enumeration value="FIR 1169 Status" /> 	  
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="DataContentTypes">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Has Ingredients" />

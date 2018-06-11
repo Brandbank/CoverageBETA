@@ -4,6 +4,7 @@ Nielsen Brandbank Coverage BETA resources </BR>
 "Examples" contains example Valid files for the proposed Text Format schemas. </BR>
 Text Formats currently supported: XML, JSON </BR>
 
+2018/06/11 XML Schema v2.2.0 (GTIN minLength constraint removed, RetailerExtensions enumlist constraint removed) </BR>
 2018/06/01 JSON Schema v3.0.0 (LIVE ON 06/06/2018) </BR>
 2018/06/01 JSON Schema v3.0.0 (category/level datatype change to bounded INT (1-4 inc.)) </BR>
 2018/05/31 JSON Schema v2.1.0 (LIVE ON 01/06/2018) </BR>
