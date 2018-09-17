@@ -21,7 +21,7 @@
 				"minLength": 1
 			},
 			"rangedOnlineDate": {
-				"description": "Date Product is (or will be) displayed online",
+				"description": "Date Product is (or will be) displayed online (UTC)",
 				"type": "string",
 				"format": "date-time"
 			},
